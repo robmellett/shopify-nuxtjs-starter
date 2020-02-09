@@ -1,5 +1,12 @@
 # shopify-nuxt-demo
 
+Copy `.env.example` to `.env` and populate with your store details.
+
+```
+SHOPIFY_DOMAIN="store.myshopify.com"
+SHOPIFY_ACCESS_TOKEN=XXXXXX
+```
+
 > Shopify Nuxt.js Demo
 
 ## Build Setup
