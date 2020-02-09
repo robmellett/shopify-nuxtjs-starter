@@ -47,7 +47,7 @@ export default {
   shopify: {
     domain: process.env.SHOPIFY_DOMAIN,
     storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-    unoptimized: true
+    unoptimized: true // If you need to access Shopify Pages, otherwise set to false
   },
   /*
    ** Build configuration
