@@ -11,9 +11,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "cookie-universal-nuxt": "^2.1.1",
+    "nuxt": "^2.0.0",
+    "nuxt-shopify": "^1.7.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^1.0.0"
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "dotenv": "^8.2.0"
   }
 }
