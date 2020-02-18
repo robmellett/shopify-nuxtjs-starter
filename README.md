@@ -1,3 +1,5 @@
+# This is a work in progress.  Will update as I get time.
+
 ## Store configuration
 
 Copy `.env.example` to `.env` and populate with your store details.
