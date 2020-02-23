@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-col md:flex-row p-4">
     <div class="w-full md:w-1/2">
-      <img src="https://via.placeholder.com/150x150" alt="">
+      <img v-if="selectedVariant" :src="selectedVariant.image.src" class="object-contain">
     </div>
-    <div>
+    <div class="w-full md:w-1/2">
       <div>
         <h1 class="text-4xl font-bold">{{ product.title }}</h1>
         <p>{{ product.description }}</p>
