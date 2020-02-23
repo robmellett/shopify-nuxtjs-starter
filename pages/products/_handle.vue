@@ -9,9 +9,7 @@
         <p>{{ product.description }}</p>
       </div>
 
-      <product-pricing
-        :variant="selectedVariant"
-      />
+      <!-- <product-pricing /> -->
 
       <product-options
         :options="product.options"
@@ -61,10 +59,6 @@ export default {
   computed: {
     selectedVariant() {
       return this.$store.getters["product/selectedVariant"];
-    },
-
-    isAvailable() {
-      return !!(this.selectedVariant && this.selectedVariant.available === true);
     },
   }
 }

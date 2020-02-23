@@ -1,17 +1,17 @@
 <template>
   <div
     class="text-xl my-4"
-    v-if="variant"
+    v-if="selectedVariant"
   >
     <p
       v-if="isOnSale"
       :class="{ 'line-through text-decoration-red' : isOnSale }"
     >
-      {{ variant.compareAtPrice | currency }}
+      {{ selectedVariant.compareAtPrice | currency }}
     </p>
     <p
-      v-if="variant.price "
-    >{{ variant.price | currency }}</p>
+      v-if="selectedVariant.price"
+    >{{ selectedVariant.price | currency }}</p>
   </div>
 </template>
 
@@ -26,8 +26,12 @@ export default {
   },
 
   computed: {
+    selectedVariant() {
+      return this.$store.getters["product/selectedVariant"];
+    },
+
     isOnSale() {
-      return isOnSale(this.variant);
+      return isOnSale(this.selectedVariant);
     },
   },
 }
