@@ -12,8 +12,11 @@
   },
   "dependencies": {
     "cookie-universal-nuxt": "^2.1.1",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.13.1",
     "nuxt": "^2.0.0",
-    "nuxt-shopify": "^1.7.0"
+    "nuxt-shopify": "^1.7.0",
+    "sass-loader": "^8.0.2"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",

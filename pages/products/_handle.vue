@@ -6,14 +6,22 @@
     <div>
       <h1>{{ product.title }}</h1>
       <p>The Price</p>
-
+      <product-options
+        :options="product.options"
+      />
     </div>
   </div>
 </template>
 
 <script>
+const ProductOptions = () => import('~/components/product-detail/ProductOptions');
+
 export default {
   name: 'ProductPage',
+
+  components: {
+    ProductOptions
+  },
 
   async asyncData({ $shopify, params }) {
     let product = await $shopify.product.fetchByHandle(params.handle)

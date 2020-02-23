@@ -24,8 +24,8 @@
 </template>
 
 <script>
-const ProductOptionColourSelector = () => import('~/components/product-detail/ProductOptionColourSelector');
-const ProductOptionSelect = () => import('~/components/product-detai/ProductOptionSelect');
+const ProductOptionColourSelector = () => import('~/components/product-detail/ProductOptionsColourSelector');
+const ProductOptionSelect = () => import('~/components/product-detail/ProductOptionsSelect');
 
 export default {
   name: "ProductOptionsComponent",

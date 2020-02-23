@@ -39,12 +39,12 @@
 </template>
 
 <script>
-import ProductOptions from '~/mixins/ProductOptions';
+import productOptions from '~/mixins/productOptions';
 
 export default {
   name: "ProductOptionColourSelector",
 
-  mixins: [ProductOptions],
+  mixins: [productOptions],
 
   methods: {
     isSelected(value) {
