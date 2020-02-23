@@ -1,17 +1,14 @@
 <template>
-  <div
-    class="text-xl my-4"
-    v-if="selectedVariant"
-  >
+  <div class="text-xl my-4">
     <p
-      v-if="isOnSale"
+      v-if="selectedVariant && isOnSale"
       :class="{ 'line-through text-decoration-red' : isOnSale }"
     >
       {{ selectedVariant.compareAtPrice | currency }}
     </p>
     <p
-      v-if="selectedVariant.price"
-    >{{ selectedVariant.price | currency }}</p>
+      v-if="selectedVariant && selectedVariant.price"
+    >{{ selectedVariant.price }}</p>
   </div>
 </template>
 
@@ -20,10 +17,6 @@ import { isOnSale } from '~/utilities/productAttributes';
 
 export default {
   name: 'ProductPricing',
-
-  props: {
-    variant: { type: Object }
-  },
 
   computed: {
     selectedVariant() {
