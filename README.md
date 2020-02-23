@@ -1,4 +1,5 @@
-# This is a work in progress.  Will update as I get time.
+# Shopify Headless Site with Nuxt.js Example
+This is a work in progress.  Will update as I get time.
 
 ## Store configuration
 
