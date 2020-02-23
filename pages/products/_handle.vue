@@ -1,6 +1,13 @@
 <template>
-  <div>
-    <h1>{{ product.title }}</h1>
+  <div class="flex flex-row">
+    <div class="w-full md:w-1/2">
+      <img src="https://via.placeholder.com/150x150" alt="">
+    </div>
+    <div>
+      <h1>{{ product.title }}</h1>
+      <p>The Price</p>
+
+    </div>
   </div>
 </template>
 
@@ -22,6 +29,12 @@ export default {
 
     return {
       product: product,
+    }
+  },
+
+  computed: {
+    selectedVariant() {
+
     }
   }
 }
