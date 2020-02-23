@@ -4,13 +4,20 @@
       <img src="https://via.placeholder.com/150x150" alt="">
     </div>
     <div>
-      <h1>{{ product.title }}</h1>
+      <div>
+        <h1 class="text-4xl font-bold">{{ product.title }}</h1>
+        <p>{{ product.description }}</p>
+      </div>
+
       <product-pricing
         :variant="selectedVariant"
       />
+
       <product-options
         :options="product.options"
+        class="md:w-1/2"
       />
+
       <add-to-cart />
     </div>
   </div>
