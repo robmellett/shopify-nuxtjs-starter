@@ -63,10 +63,6 @@ export default {
         }, 3000);
       }
     },
-
-    mapNotificationType(type) {
-      return notificationTypes[type];
-    }
   },
 }
 </script>
