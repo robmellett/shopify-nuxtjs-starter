@@ -90,6 +90,6 @@ export const mutations = {
   },
 
   updateCheckout(state, checkout) {
-    state.checkout = checkout;
+    state.checkout = { ...checkout };
   }
 };
