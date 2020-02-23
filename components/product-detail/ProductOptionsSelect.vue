@@ -5,9 +5,7 @@
       v-model="selectedOption"
       :id="name"
       @change="changeOption"
-      class="form-select block appearance-none w-full md:w-1/2 lg:w-full bg-gray-200 border border-gray-200
-      text-gray-700 py-3 px-4 pr-8 rounded leading-tight
-      focus:outline-none focus:bg-white focus:border-gray-500"
+      class="form-select w-full"
     >
       <option
         v-for="option in options"
