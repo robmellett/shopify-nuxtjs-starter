@@ -34,7 +34,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/checkout"],
+  plugins: [{ src: "~/plugins/checkout" }, { src: "~/plugins/filters" }],
   /*
    ** Nuxt.js dev-modules
    */

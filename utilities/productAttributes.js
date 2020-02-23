@@ -1,3 +1,19 @@
+// import dayjs from "dayjs";
+// import isBetween from "dayjs/plugin/isBetween";
+
+// dayjs.extend(isBetween);
+
+// export const isNew = variant => {
+//   let recentPeriod = dayjs().subtract(30, "days");
+//   let createdAt = dayjs(variant.createdAt);
+
+//   return createdAt.isBetween(recentPeriod, dayjs());
+// };
+
+export const isLowOnStock = variant => {
+  return !!(variant && variant.inventory_management === "shopify");
+};
+
 // The compare at price of the variant.
 // This can be used to mark a variant as on sale, when compareAtPriceV2 is higher than priceV2.
 // https://help.shopify.com/en/api/storefront-api/reference/object/productvariant

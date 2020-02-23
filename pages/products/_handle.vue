@@ -5,7 +5,9 @@
     </div>
     <div>
       <h1>{{ product.title }}</h1>
-      <p>The Price</p>
+      <product-pricing
+        :variant="selectedVariant"
+      />
       <product-options
         :options="product.options"
       />
@@ -17,13 +19,15 @@
 <script>
 const AddToCart = () => import ('~/components/product-detail/AddToCartButton');
 const ProductOptions = () => import('~/components/product-detail/ProductOptions');
+const ProductPricing = () => import('~/components/product-detail/ProductPricing');
 
 export default {
   name: 'ProductPage',
 
   components: {
     AddToCart,
-    ProductOptions
+    ProductOptions,
+    ProductPricing
   },
 
   async asyncData({ $shopify, params }) {
