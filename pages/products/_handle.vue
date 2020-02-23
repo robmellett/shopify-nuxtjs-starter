@@ -9,17 +9,20 @@
       <product-options
         :options="product.options"
       />
+      <add-to-cart />
     </div>
   </div>
 </template>
 
 <script>
+const AddToCart = () => import ('~/components/product-detail/AddToCartButton');
 const ProductOptions = () => import('~/components/product-detail/ProductOptions');
 
 export default {
   name: 'ProductPage',
 
   components: {
+    AddToCart,
     ProductOptions
   },
 
@@ -40,10 +43,18 @@ export default {
     }
   },
 
+  mounted() {
+    this.$store.dispatch("product/setProduct", this.product);
+  },
+
   computed: {
     selectedVariant() {
+      return this.$store.getters["product/selectedVariant"];
+    },
 
-    }
+    isAvailable() {
+      return !!(this.selectedVariant && this.selectedVariant.available === true);
+    },
   }
 }
 </script>
