@@ -2,6 +2,11 @@ const env = require("dotenv").config();
 
 export default {
   mode: "universal",
+
+  router: {
+    middleware: "checkout"
+  },
+
   /*
    ** Headers of the page
    */
@@ -29,7 +34,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["~/plugins/checkout"],
   /*
    ** Nuxt.js dev-modules
    */
