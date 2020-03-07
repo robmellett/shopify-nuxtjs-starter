@@ -8,7 +8,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lighthouse": "lighthouse 'http://localhost:3000' --output-path='./test/lighthouse-results.html' --quiet --chrome-flags='--headless' --view"
   },
   "dependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",
