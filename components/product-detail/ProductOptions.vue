@@ -28,7 +28,7 @@ const ProductOptionColourSelector = () => import('~/components/product-detail/Pr
 const ProductOptionSelect = () => import('~/components/product-detail/ProductOptionsSelect');
 
 export default {
-  name: "ProductOptionsComponent",
+  name: "ProductOptions",
 
   props: {
     options: { required: true, type: Array },
