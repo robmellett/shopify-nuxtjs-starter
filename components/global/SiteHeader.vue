@@ -67,112 +67,28 @@
             </button>
           </div>
         </div>
-        <div class="-mr-2 flex sm:hidden">
-          <button
-            @click="open = !open"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
-          >
-            <svg
-              class="h-6 w-6"
-              stroke="currentColor"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                :class="{'hidden': open, 'inline-flex': !open }"
-                class="inline-flex"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-              <path
-                :class="{'hidden': !open, 'inline-flex': open }"
-                class=""
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
+        <site-navigation-button />
       </div>
     </div>
-    <div
-      :class="{'block': open, 'hidden': !open}"
-      class="sm:hidden"
-    >
-      <div class="px-2 pt-2 pb-3">
-        <nuxt-link
-          :to="{ name: 'index' }"
-          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          exact
-        >
-          Home
-        </nuxt-link>
-        <nuxt-link
-          :to="{ name: 'products' }"
-          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          exact
-        >
-          Products
-        </nuxt-link>
-        <nuxt-link
-          :to="{ name: 'collections' }"
-          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          exact
-        >
-          Collections
-        </nuxt-link>
-        <nuxt-link
-          :to="{ name: 'articles' }"
-          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          exact
-        >
-          Blog
-        </nuxt-link>
-      </div>
-      <div class="pt-4 pb-3 border-t border-gray-700">
-        <div class="flex items-center px-5">
-          <div class="flex-shrink-0">
-            <img
-              class="h-10 w-10 rounded-full"
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-            />
-          </div>
-          <div class="ml-3">
-            <div class="text-base font-medium leading-6 text-white">Tom Cook</div>
-            <div class="text-sm font-medium leading-5 text-gray-400">tom@example.com</div>
-          </div>
-        </div>
-        <div class="mt-3 px-2">
-          <a
-            href="#"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          >Your Profile</a>
-          <a
-            href="#"
-            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          >Settings</a>
-          <a
-            href="#"
-            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          >Sign out</a>
-        </div>
-      </div>
-    </div>
+    <site-navigation-dropdown />
   </nav>
 </template>
 
 <script>
+const  SiteNavigationButton = () => import("~/components/navigation/SiteNavigationButton");
+const  SiteNavigationDropdown = () => import("~/components/navigation/SiteNavigationDropDown");
+
 export default {
   name: 'SiteHeader',
 
-  data: () => {
-    return {
-      open: false
+  components: {
+    SiteNavigationButton,
+    SiteNavigationDropdown
+  },
+
+  computed: {
+    open() {
+      return this.$store.getters['navigation/isOpen'];
     }
   }
 }
@@ -191,7 +107,10 @@ export default {
     bg-gray-900;
 
   &:focus {
-    @apply outline-none text-white bg-gray-700
+    @apply
+      outline-none
+      text-white
+      bg-gray-700
   }
 }
 </style>
