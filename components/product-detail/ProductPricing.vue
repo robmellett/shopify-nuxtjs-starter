@@ -1,14 +1,15 @@
 <template>
   <div class="text-xl my-4">
-    <p
-      v-if="selectedVariant && isOnSale"
-      :class="{ 'line-through text-decoration-red' : isOnSale }"
-    >
-      {{ selectedVariant.compareAtPrice | currency }}
+    <div>
+      <p
+        v-if="selectedVariant && isOnSale"
+        :class="{ 'line-through text-decoration-red' : isOnSale }">
+        {{ selectedVariant.compareAtPrice | currency }}
+      </p>
+    </div>
+    <p v-if="selectedVariant.price">
+      {{ selectedVariant.price | currency }}
     </p>
-    <p
-      v-if="selectedVariant && selectedVariant.price"
-    >{{ selectedVariant.price }}</p>
   </div>
 </template>
 
