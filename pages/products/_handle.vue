@@ -35,7 +35,7 @@ export default {
     ProductPricing
   },
 
-  async fetch ({ $shopify, store, params }) {
+  async fetch ({ $shopify, store, params, error }) {
     return await $shopify.product.fetchByHandle(params.handle)
       .then((product) => {
         if (!product) {
