@@ -1,13 +1,10 @@
 <template>
-  <div class="flex flex-col md:flex-row p-4">
-    <div class="w-full md:w-1/2">
-      <img
-        v-if="selectedVariant"
-        :src="selectedVariant.image.src"
-        class="object-contain p-4"
-      >
+  <div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-4 p-4">
+    <div class="col-span-2 col-span-2">
+      <product-gallery />
     </div>
-    <div class="w-full md:w-1/2">
+
+    <div class="col-span-2">
       <div>
         <h1 class="text-4xl font-bold">{{ product.title }}</h1>
         <p>{{ product.description }}</p>
@@ -19,7 +16,6 @@
         :options="product.options"
         class="md:w-1/2"
       />
-
       <add-to-cart />
     </div>
   </div>
@@ -28,6 +24,7 @@
 <script>
 const AddToCart = () => import ('~/components/product-detail/AddToCartButton');
 const ProductOptions = () => import('~/components/product-detail/ProductOptions');
+const ProductGallery = () => import('~/components/product-detail/ProductGallery');
 const ProductPricing = () => import('~/components/product-detail/ProductPricing');
 
 export default {
@@ -36,6 +33,7 @@ export default {
   components: {
     AddToCart,
     ProductOptions,
+    ProductGallery,
     ProductPricing
   },
 
