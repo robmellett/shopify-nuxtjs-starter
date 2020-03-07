@@ -19,6 +19,9 @@ Here's some other features features we have out of the box.
 ## Demo Site
 [https://shopify-nuxtjs-starter.netlify.com](https://shopify-nuxtjs-starter.netlify.com/)
 
+![Sample Product Detail Page Image](assets//wiki/pdp-sample.png "PHPStorm XDebug Settings 2")
+
+
 
 ## Store configuration
 
