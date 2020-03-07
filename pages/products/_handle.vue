@@ -1,7 +1,11 @@
 <template>
   <div class="flex flex-col md:flex-row p-4">
     <div class="w-full md:w-1/2">
-      <img v-if="selectedVariant" :src="selectedVariant.image.src" class="object-contain">
+      <img
+        v-if="selectedVariant"
+        :src="selectedVariant.image.src"
+        class="object-contain p-4"
+      >
     </div>
     <div class="w-full md:w-1/2">
       <div>
