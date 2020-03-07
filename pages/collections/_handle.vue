@@ -1,6 +1,6 @@
 <template>
   <div>
-    All the collections
+    Collection Detail
   </div>
 </template>
 

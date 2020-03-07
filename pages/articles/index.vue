@@ -1,12 +1,12 @@
 <template>
   <div>
-    All the collections
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CollectionPage',
+  name: 'ArticlePage',
 
   props: {
 

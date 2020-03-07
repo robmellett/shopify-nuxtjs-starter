@@ -15,6 +15,8 @@
 
 <script>
 export default {
+  name: "IndexPage",
+
   async asyncData({ $shopify, params }) {
     const products = await $shopify.product.fetchAll();
     return { products };

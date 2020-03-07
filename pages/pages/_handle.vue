@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Page',
+  name: 'StandardPage',
 
   async asyncData({ $shopify, params, error }) {
     const query = await $shopify.graphQLClient.query((root) => {
