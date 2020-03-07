@@ -7,7 +7,7 @@
         {{ selectedVariant.compareAtPrice | currency }}
       </p>
     </div>
-    <p v-if="selectedVariant.price">
+    <p v-if="selectedVariant && selectedVariant.price">
       {{ selectedVariant.price | currency }}
     </p>
   </div>
