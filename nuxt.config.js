@@ -7,6 +7,11 @@ export default {
     middleware: "checkout"
   },
 
+  generate: {
+    fallback: true,
+    // routes: dynamicRoutes
+  },
+
   /*
    ** Headers of the page
    */
