@@ -9,7 +9,7 @@
         <p>{{ product.description }}</p>
       </div>
 
-      <!-- <product-pricing /> -->
+      <product-pricing />
 
       <product-options
         :options="product.options"
@@ -35,28 +35,25 @@ export default {
     ProductPricing
   },
 
-  async asyncData({ $shopify, params }) {
-    let product = await $shopify.product.fetchByHandle(params.handle)
+  async fetch ({ $shopify, store, params }) {
+    return await $shopify.product.fetchByHandle(params.handle)
       .then((product) => {
         if (!product) {
           error({ statusCode: 403, message: 'Product does not have Storefront Permissions' })
         }
-        return product;
+
+        store.commit("product/setProduct", product)
       })
       .catch((err) => {
         error({ statusCode: 404, message: 'Product not found' })
       });
-
-    return {
-      product: product,
-    }
-  },
-
-  mounted() {
-    this.$store.dispatch("product/setProduct", this.product);
   },
 
   computed: {
+    product() {
+      return this.$store.getters["product/product"];
+    },
+
     selectedVariant() {
       return this.$store.getters["product/selectedVariant"];
     },

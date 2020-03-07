@@ -7,6 +7,8 @@ export const state = () => ({
 });
 
 export const getters = {
+  product: (state) => state.product,
+
   selectedVariant: state =>
     getSelectedVariant(state.product.variants, state.selectedProductOptions)
 };
@@ -24,7 +26,7 @@ export const actions = {
 
 export const mutations = {
   setProduct(state, product) {
-    state.product = product;
+    state.product = {...product};
   },
 
   setProductOptions(state, { key, value }) {
@@ -32,7 +34,7 @@ export const mutations = {
   },
 
   hydrateProductOptions(state) {
-    // When using the nuxt-link tags, vuex data is persisted across
+    // When using the nuxt-link tags, vuex store is persisted across
     // page loads.  We need to clear it first.
     state.selectedProductOptions = {};
 
