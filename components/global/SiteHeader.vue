@@ -4,16 +4,23 @@
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <img
-              class="block lg:hidden h-8 w-auto"
-              src="~assets/images/acme-logo-light.svg"
-              alt="Site Logo"
-            />
-            <img
-              class="hidden lg:block h-8 w-auto"
-              src="~assets/images/acme-logo-light.svg"
-              alt="Site Logo"
-            />
+            <nuxt-link
+              :to="{ name: 'index' }"
+              class="outline-none"
+              active-class=""
+              exact
+            >
+              <img
+                class="block lg:hidden h-8 w-auto"
+                src="~assets/images/acme-logo-light.svg"
+                alt="Site Logo"
+              />
+              <img
+                class="hidden lg:block h-8 w-auto"
+                src="~assets/images/acme-logo-light.svg"
+                alt="Site Logo"
+              />
+            </nuxt-link>
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex">
@@ -81,22 +88,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.nuxt-link-exact-active {
-  @apply px-3
-    py-2
-    rounded-md
-    text-sm
-    font-medium
-    leading-5
-    text-white
-    bg-gray-900;
-
-  &:focus {
-    @apply outline-none
-      text-white
-      bg-gray-700;
-  }
-}
-</style>
