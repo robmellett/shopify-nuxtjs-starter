@@ -7,33 +7,22 @@ export default class ShopifyService {
 
   async generateDynamicRoutes() {
     let routes = [];
+    let hasNextPage = true;
 
-    // console.log(this.$shopify);
+    do {
+      await this.$shopify.product.fetchAll().then((products) => {
+        hasNextPage = last(products).hasNextPage;
 
-    let products = await this.$shopify.allProducts();
-    products.forEach(p => {
-      routes.push({
-        route: '/products/' + p.handle,
-        payload: p
-      });
-    });
+        products.forEach(p => {
+          console.log("Adding " + p.handle);
+          routes.push({
+            route: "/products/" + p.handle,
+            payload: p
+          });
+        });
+      })
+    } while (hasNextPage);
 
     return routes;
   }
-
-  // buildDynamicRoutes() {
-  //   do {
-  //     let products = await this.$shopify.allProducts();
-  //     hasNextPage = last(products).hasNextPage;
-
-  //     products.forEach(p => {
-  //       routes.push({
-  //         route: '/products/' + p.handle,
-  //         payload: p
-  //       });
-  //     })
-  //   } while (hasNextPage);
-
-  //   return routes;
-  // }
 }

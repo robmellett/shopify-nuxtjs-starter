@@ -15,7 +15,6 @@ export default async function ShopifyModule(moduleOptions) {
   this.nuxt.hook('build:before', async (ctx) => {
 
     console.log(">>>> Nuxt JS Hook to catch the build")
-    // console.log(ctx);
     this.addPlugin({
       src: path.resolve(__dirname, "plugin.js"),
       fileName: "plugin.js",
