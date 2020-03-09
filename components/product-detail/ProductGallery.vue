@@ -1,7 +1,7 @@
 <template>
   <div class="w-full min-h-full h-full flex items-center justify-center">
     <img
-      v-if="selectedVariant"
+      v-if="hasImage"
       :src="selectedVariant.image.src"
       class="object-contain p-4"
     >
@@ -22,7 +22,7 @@ export default {
     },
 
     hasImage() {
-      return this.selectedVariant && this.selectedVariant.image.src;
+      return this.selectedVariant && this.selectedVariant.image;
     }
   }
 }

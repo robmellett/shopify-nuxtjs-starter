@@ -1,4 +1,5 @@
 const env = require("dotenv").config();
+import ShopifyService from "./services/ShopifyService";
 
 export default {
   mode: "universal",
@@ -9,7 +10,8 @@ export default {
 
   generate: {
     fallback: true,
-    // routes: dynamicRoutes
+    routes: [],
+    interval: 100
   },
 
   /*
@@ -47,7 +49,8 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     "@nuxtjs/tailwindcss",
     "cookie-universal-nuxt",
-    "nuxt-shopify"
+    "nuxt-shopify",
+    "~/modules/shopify"
   ],
   /*
    ** Nuxt.js modules
@@ -66,6 +69,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      if (ctx.isServer) {
+        // Generate Dynamic Routes
+
+        console.log(this.nuxt);
+
+        // $shopify = new ShopifyService($shopify);
+        // let routes = $shopify.generateDynamicRoutes();
+        // this.buildContext.options.generate.routes.push(routes);
+      }
+    }
   }
 };
