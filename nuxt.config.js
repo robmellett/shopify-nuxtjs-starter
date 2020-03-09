@@ -10,7 +10,8 @@ export default {
 
   generate: {
     fallback: true,
-    routes: []
+    routes: [],
+    interval: 100
   },
 
   /*
@@ -69,17 +70,15 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      if (ctx.isServer) {
+        // Generate Dynamic Routes
 
-      // console.log(ctx);
-      // if (context.isServer) {
-      //   // Generate Dynamic Routes
+        console.log(this.nuxt);
 
-      //   console.log($shopify);
-
-      //   // $shopify = new ShopifyService($shopify);
-      //   // let routes = $shopify.generateDynamicRoutes();
-      //   // this.buildContext.options.generate.routes.push(routes);
-      // }
+        // $shopify = new ShopifyService($shopify);
+        // let routes = $shopify.generateDynamicRoutes();
+        // this.buildContext.options.generate.routes.push(routes);
+      }
     }
   }
 };
