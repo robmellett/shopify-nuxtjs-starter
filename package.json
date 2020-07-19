@@ -14,7 +14,7 @@
   "dependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",
     "cookie-universal-nuxt": "^2.1.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "node-sass": "^4.13.1",
     "nuxt": "^2.0.0",
     "nuxt-shopify": "^1.7.0",
